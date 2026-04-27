@@ -124,7 +124,7 @@ const page = async ({ params }) => {
         Blog details will come soon !
       </h2>
       <div className="h-screen flex flex-col justify-center items-center border-2 rounded-2xl m-4 p-6">
-        <h5 className="text-xl mb-4 font-bold">{blog.title}</h5>
+        <h5 className="text-xl mb-4 font-bold text-center">{blog.title}</h5>
         <p className="text-center text-sm text-[#cfcfcf]">{blog.content}</p>
       </div>
     </div>
