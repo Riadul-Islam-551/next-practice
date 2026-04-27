@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const BlogsPage = () => {
@@ -119,9 +120,12 @@ const BlogsPage = () => {
       <h2 className="text-2xl font-bold text-[#f07f23]">
         This is the Blogs Page
       </h2>
-      {blogs.map((blogs, ind) => (
+      {blogs.map((blog, ind) => (
         <div key={ind} className="border rounded-2xl p-4 my-4">
-          <h3 className="text-xl font-semibold">{blogs.title}</h3>
+          <h3 className="text-xl font-semibold">{blog.title}</h3>
+          <Link href={`/blogs/${blog.id}`} className="btn mt-4">
+            Show details
+          </Link>
         </div>
       ))}
     </div>
