@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# next-practice
 
-## Getting Started
+A Next.js 16 project built with React 19, Tailwind CSS and DaisyUI. The app includes a responsive navigation bar, static pages, a blogs section with dynamic routes and a dashboard area with nested routes and external API user data. This project is mainly made for trying a Next.js project for first time.
 
-First, run the development server:
+## Project structure
+
+- `src/app/layout.js` — root layout with global font setup and `Navbar` included on every page
+- `src/app/page.js` — homepage
+- `src/components/Navbar.jsx` — responsive navigation menu using `next/link` and `usePathname`
+- `src/app/about/page.jsx` — About page
+- `src/app/contact/page.jsx` — Contact page
+- `src/app/blogs/page.jsx` — Blogs listing page with in-memory blog entries
+- `src/app/blogs/[blogId]/page.jsx` — dynamic blog detail route
+- `src/app/dashboard/page.jsx` — Dashboard top page
+- `src/app/dashboard/admin/page.jsx` — Admin page
+- `src/app/dashboard/users/page.jsx` — Users list page fetching from JSONPlaceholder
+- `src/app/dashboard/users/[userId]/page.jsx` — Dynamic user detail page using external API data
+
+## Built with
+
+- Next.js 16.2.4
+- React 19.2.4
+- Tailwind CSS v4
+- DaisyUI
+- `next/font` with Geist fonts
+- ESLint for linting
+
+## Available scripts
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running locally
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+```
 
-## Learn More
+2. Start the development server:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Open the app in your browser:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+http://localhost:3000
+```
 
-## Deploy on Vercel
+## Main routes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `/` — Home page
+- `/about` — About page
+- `/contact` — Contact page
+- `/blogs` — Blogs listing page
+- `/blogs/[blogId]` — Blog detail pages
+- `/dashboard` — Dashboard landing page
+- `/dashboard/admin` — Admin page
+- `/dashboard/users` — Users list page
+- `/dashboard/users/[userId]` — User detail page
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+
+- The `Navbar` component highlights the active route and supports mobile dropdown navigation.
+- The users dashboard fetches data from `https://jsonplaceholder.typicode.com/users`.
+- Blog details are loaded from a local in-memory blog array.
+
+## Customize
+
+- Update `src/app/page.js` for homepage content.
+- Edit `src/app/blogs/page.jsx` and `src/app/blogs/[blogId]/page.jsx` to change blog data or page layout.
+- Modify `src/app/dashboard/users/page.jsx` and `src/app/dashboard/users/[userId]/page.jsx` to connect to a real API or add more fields.
+
+## License
+
+This repository is currently a learning/demo project and does not include a formal license.
