@@ -5,7 +5,7 @@ const UsersPage = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const users = await res.json();
 
-  console.log(users);
+  // console.log(users);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-4">
       {users.map((user, ind) => (
